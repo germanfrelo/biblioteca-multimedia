@@ -1,4 +1,4 @@
-const elements = [
+const initialElements = [
 	// Películas
 	{
 		id: 1,
@@ -111,4 +111,4 @@ const elements = [
 	},
 ];
 
-export default elements;
+export default initialElements;
