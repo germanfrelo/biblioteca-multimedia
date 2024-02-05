@@ -1,0 +1,9 @@
+.media-element {
+	display: grid;
+	grid-template-columns: max-content 1fr;
+	gap: 0.25rem 1rem;
+}
+
+.media-element * {
+	margin: 0;
+}
