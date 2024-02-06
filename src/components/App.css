@@ -4,6 +4,10 @@ body {
 	margin-inline: auto;
 }
 
+[type="search"] {
+	inline-size: 100%;
+}
+
 .list-unstyled {
 	padding-inline-start: 0;
 	list-style-type: none;
@@ -13,4 +17,11 @@ body {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(min(100%, 25rem), 1fr));
 	gap: 1rem 2rem;
+}
+
+.stack {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+	align-items: flex-start;
 }
