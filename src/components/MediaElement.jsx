@@ -1,12 +1,8 @@
 import "./MediaElement.css";
 
-function MediaElement({ id, type, name, releaseDate, createdDate }) {
+function MediaElement({ name, releaseDate, createdDate }) {
 	return (
 		<dl className="media-element">
-			<dt>ID:</dt>
-			<dd>{id}</dd>
-			<dt>Tipo:</dt>
-			<dd>{type}</dd>
 			<dt>Nombre:</dt>
 			<dd>{name}</dd>
 			<dt>Fecha lanzamiento:</dt>
