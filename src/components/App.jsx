@@ -1,11 +1,11 @@
-import initialElements from "../data";
+import { elementTypes, initialElements } from "../data";
 import "./App.css";
 import MediaElement from "./MediaElement";
 
 function App() {
-	const movies = initialElements.filter((element) => element.type === "pelicula");
-	const videoGames = initialElements.filter((element) => element.type === "videojuego");
-	const ebooks = initialElements.filter((element) => element.type === "ebook");
+	const movies = initialElements.filter((element) => element.type === elementTypes.movie);
+	const videoGames = initialElements.filter((element) => element.type === elementTypes.videoGame);
+	const ebooks = initialElements.filter((element) => element.type === elementTypes.eBook);
 
 	return (
 		<>
