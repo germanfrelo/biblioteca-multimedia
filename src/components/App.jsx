@@ -15,7 +15,7 @@ function App() {
 				<section>
 					<h2>Películas</h2>
 
-					<ul className="grid">
+					<ul className="list-unstyled grid">
 						{movies.map(({ id, type, name, releaseDate, createdDate }) => (
 							<li key={id}>
 								<MediaElement id={id} type={type} name={name} releaseDate={releaseDate} createdDate={createdDate} />
@@ -27,7 +27,7 @@ function App() {
 				<section>
 					<h2>Videojuegos</h2>
 
-					<ul className="grid">
+					<ul className="list-unstyled grid">
 						{videoGames.map(({ id, type, name, releaseDate, createdDate }) => (
 							<li key={id}>
 								<MediaElement id={id} type={type} name={name} releaseDate={releaseDate} createdDate={createdDate} />
@@ -39,7 +39,7 @@ function App() {
 				<section>
 					<h2>eBooks</h2>
 
-					<ul className="grid">
+					<ul className="list-unstyled grid">
 						{ebooks.map(({ id, type, name, releaseDate, createdDate }) => (
 							<li key={id}>
 								<MediaElement id={id} type={type} name={name} releaseDate={releaseDate} createdDate={createdDate} />
