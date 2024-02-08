@@ -19,13 +19,9 @@ function ElementsList({ elements }) {
 					<h2>Películas</h2>
 
 					<ul className="list-unstyled grid">
-						{movies.map(({ id, name, releaseDate, createdDate }) => (
+						{movies.map(({ id, name, createdDate }) => (
 							<li key={id}>
-								<MediaElement
-									name={name}
-									releaseDate={releaseDate}
-									createdDate={createdDate}
-								/>
+								<MediaElement name={name} createdDate={createdDate} />
 							</li>
 						))}
 					</ul>
@@ -37,13 +33,9 @@ function ElementsList({ elements }) {
 					<h2>Videojuegos</h2>
 
 					<ul className="list-unstyled grid">
-						{videoGames.map(({ id, name, releaseDate, createdDate }) => (
+						{videoGames.map(({ id, name, createdDate }) => (
 							<li key={id}>
-								<MediaElement
-									name={name}
-									releaseDate={releaseDate}
-									createdDate={createdDate}
-								/>
+								<MediaElement name={name} createdDate={createdDate} />
 							</li>
 						))}
 					</ul>
@@ -55,13 +47,9 @@ function ElementsList({ elements }) {
 					<h2>eBooks</h2>
 
 					<ul className="list-unstyled grid">
-						{ebooks.map(({ id, name, releaseDate, createdDate }) => (
+						{ebooks.map(({ id, name, createdDate }) => (
 							<li key={id}>
-								<MediaElement
-									name={name}
-									releaseDate={releaseDate}
-									createdDate={createdDate}
-								/>
+								<MediaElement name={name} createdDate={createdDate} />
 							</li>
 						))}
 					</ul>
