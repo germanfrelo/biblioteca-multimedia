@@ -1,4 +1,4 @@
 {
-	"singleAttributePerLine": false,
+	"singleAttributePerLine": true,
 	"useTabs": true
 }
