@@ -13,7 +13,10 @@ function App() {
 			return elements;
 		}
 		const filteredElements = elements.filter(({ name, createdDate }) => {
-			return name.toLowerCase().includes(searchTerm.toLowerCase()) || createdDate.includes(searchTerm);
+			return (
+				name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+				createdDate.includes(searchTerm)
+			);
 		});
 		return filteredElements;
 	}
@@ -31,7 +34,11 @@ function App() {
 					<p>{`No hay resultados para "${searchTerm}"`}</p>
 				) : (
 					<>
-						{searchTerm ? <p>{`${filteredElements.length} resultados para "${searchTerm}"`}</p> : <p>{`${filteredElements.length} resultados`}</p>}
+						{searchTerm ? (
+							<p>{`${filteredElements.length} resultados para "${searchTerm}"`}</p>
+						) : (
+							<p>{`${filteredElements.length} resultados`}</p>
+						)}
 
 						<ElementsList elements={filteredElements} />
 					</>
