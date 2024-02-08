@@ -11,7 +11,13 @@ function SearchForm({ searchTerm, setSearchTerm }) {
 				<strong>Buscar</strong>
 				<span>Por nombre o fecha de creación</span>
 			</label>
-			<input type="search" id="search-input" name="q" value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)} />
+			<input
+				type="search"
+				id="search-input"
+				name="q"
+				value={searchTerm}
+				onChange={(event) => setSearchTerm(event.target.value)}
+			/>
 		</form>
 	);
 }

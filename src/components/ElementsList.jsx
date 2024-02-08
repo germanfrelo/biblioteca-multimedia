@@ -2,9 +2,15 @@ import { elementTypes } from "../data";
 import MediaElement from "./MediaElement";
 
 function ElementsList({ elements }) {
-	const movies = elements.filter((element) => element.type === elementTypes.movie);
-	const videoGames = elements.filter((element) => element.type === elementTypes.videoGame);
-	const ebooks = elements.filter((element) => element.type === elementTypes.eBook);
+	const movies = elements.filter(
+		(element) => element.type === elementTypes.movie,
+	);
+	const videoGames = elements.filter(
+		(element) => element.type === elementTypes.videoGame,
+	);
+	const ebooks = elements.filter(
+		(element) => element.type === elementTypes.eBook,
+	);
 
 	return (
 		<div className="grid">
@@ -15,7 +21,11 @@ function ElementsList({ elements }) {
 					<ul className="list-unstyled grid">
 						{movies.map(({ id, name, releaseDate, createdDate }) => (
 							<li key={id}>
-								<MediaElement name={name} releaseDate={releaseDate} createdDate={createdDate} />
+								<MediaElement
+									name={name}
+									releaseDate={releaseDate}
+									createdDate={createdDate}
+								/>
 							</li>
 						))}
 					</ul>
@@ -29,7 +39,11 @@ function ElementsList({ elements }) {
 					<ul className="list-unstyled grid">
 						{videoGames.map(({ id, name, releaseDate, createdDate }) => (
 							<li key={id}>
-								<MediaElement name={name} releaseDate={releaseDate} createdDate={createdDate} />
+								<MediaElement
+									name={name}
+									releaseDate={releaseDate}
+									createdDate={createdDate}
+								/>
 							</li>
 						))}
 					</ul>
@@ -43,7 +57,11 @@ function ElementsList({ elements }) {
 					<ul className="list-unstyled grid">
 						{ebooks.map(({ id, name, releaseDate, createdDate }) => (
 							<li key={id}>
-								<MediaElement name={name} releaseDate={releaseDate} createdDate={createdDate} />
+								<MediaElement
+									name={name}
+									releaseDate={releaseDate}
+									createdDate={createdDate}
+								/>
 							</li>
 						))}
 					</ul>
