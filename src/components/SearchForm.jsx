@@ -7,7 +7,10 @@ function SearchForm({ searchTerm, setSearchTerm }) {
 			}}
 			className="stack"
 		>
-			<label htmlFor="search-input" className="stack">
+			<label
+				htmlFor="search-input"
+				className="stack"
+			>
 				<strong>Buscar</strong>
 				<span>Por nombre o fecha de creación</span>
 			</label>

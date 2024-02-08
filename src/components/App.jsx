@@ -27,7 +27,10 @@ function App() {
 		<>
 			<h1>Biblioteca multimedia</h1>
 
-			<SearchForm searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+			<SearchForm
+				searchTerm={searchTerm}
+				setSearchTerm={setSearchTerm}
+			/>
 
 			<main>
 				{!filteredElements.length ? (
