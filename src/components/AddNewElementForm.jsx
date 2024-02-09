@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { elementTypes } from "../data";
 
-function AddNewElementForm({ handleAddElement }) {
+export default function AddNewElementForm({ handleAddElement }) {
 	const [type, setType] = useState("");
 	const [name, setName] = useState("");
 
@@ -61,5 +61,3 @@ function AddNewElementForm({ handleAddElement }) {
 		</>
 	);
 }
-
-export default AddNewElementForm;

@@ -1,4 +1,4 @@
-function SearchForm({ searchTerm, setSearchTerm }) {
+export default function SearchForm({ searchTerm, setSearchTerm }) {
 	return (
 		<form
 			role="search"
@@ -26,5 +26,3 @@ function SearchForm({ searchTerm, setSearchTerm }) {
 		</form>
 	);
 }
-
-export default SearchForm;

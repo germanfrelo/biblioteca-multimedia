@@ -1,7 +1,7 @@
 import { elementTypes } from "../data";
 import MediaElement from "./MediaElement";
 
-function ElementsList({ elements }) {
+export default function ElementsList({ elements }) {
 	const movies = elements.filter(
 		(element) => element.type === elementTypes.movie,
 	);
@@ -67,5 +67,3 @@ function ElementsList({ elements }) {
 		</div>
 	);
 }
-
-export default ElementsList;

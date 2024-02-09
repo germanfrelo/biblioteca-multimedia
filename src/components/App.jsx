@@ -5,7 +5,7 @@ import "./App.css";
 import ElementsList from "./ElementsList";
 import SearchForm from "./SearchForm";
 
-function App() {
+export default function App() {
 	const [elements, setElements] = useState(initialElements);
 	const [searchTerm, setSearchTerm] = useState("");
 
@@ -72,5 +72,3 @@ function App() {
 		</div>
 	);
 }
-
-export default App;

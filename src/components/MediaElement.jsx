@@ -1,6 +1,6 @@
 import "./MediaElement.css";
 
-function MediaElement({ name, createdDate }) {
+export default function MediaElement({ name, createdDate }) {
 	return (
 		<dl className="media-element">
 			<dt>Nombre:</dt>
@@ -11,5 +11,3 @@ function MediaElement({ name, createdDate }) {
 		</dl>
 	);
 }
-
-export default MediaElement;
