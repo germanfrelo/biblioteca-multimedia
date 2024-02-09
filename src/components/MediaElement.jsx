@@ -16,6 +16,8 @@ export default function MediaElement({ element, handleEditElement }) {
 
 	const handleEditToggle = () => {
 		setIsEditing(!isEditing);
+		// Reset the inputs
+		setEditedElement({ ...element });
 	};
 
 	function handleSave() {
