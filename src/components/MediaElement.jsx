@@ -33,6 +33,8 @@ export default function MediaElement({ element, handleEditElement }) {
 				name="name"
 				value={editedElement.name}
 				onChange={handleInputChange}
+					required={true}
+					autoComplete="off"
 			/>
 			<button onClick={handleSave}>Guardar</button>
 			<button onClick={handleEditToggle}>Cancelar</button>
