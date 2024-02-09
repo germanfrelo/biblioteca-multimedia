@@ -33,6 +33,13 @@ export default function App() {
 		setElements([...elements, newElement]);
 	}
 
+	function handleEditElement(updatedElement) {
+		const updatedElements = elements.map((element) =>
+			element.id === updatedElement.id ? updatedElement : element,
+		);
+		setElements(updatedElements);
+	}
+
 	const filteredElements = filterElements({ elements, searchTerm });
 
 	return (
@@ -50,7 +57,7 @@ export default function App() {
 					</section>
 
 					<section className="stack-sm">
-						<h2>Añadir nuevo elemento</h2>
+						<h2>Añadir elemento</h2>
 						<AddNewElementForm handleAddElement={handleAddElement} />
 					</section>
 				</div>
@@ -64,7 +71,10 @@ export default function App() {
 								<p>{`${filteredElements.length} resultados para "${searchTerm}".`}</p>
 							)}
 
-							<ElementsList elements={filteredElements} />
+							<ElementsList
+								elements={filteredElements}
+								handleEditElement={handleEditElement}
+							/>
 						</>
 					)}
 				</main>
