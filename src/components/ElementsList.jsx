@@ -2,67 +2,41 @@ import { elementTypes } from "../data";
 import MediaElement from "./MediaElement";
 
 export default function ElementsList({ elements, handleEditElement }) {
-	const movies = elements.filter(
-		(element) => element.type === elementTypes.movie,
-	);
-	const videoGames = elements.filter(
-		(element) => element.type === elementTypes.videoGame,
-	);
-	const ebooks = elements.filter(
-		(element) => element.type === elementTypes.eBook,
-	);
+	function renderElementsByType(elements, type) {
+		const filteredElements = elements.filter(
+			(element) => element.type === type.id,
+		);
+
+		// Don't render the section if there are no filtered elements
+		if (!filteredElements.length > 0) {
+			return null;
+		}
+
+		return (
+			<section
+				key={type.id}
+				className="stack-md"
+			>
+				<h2>{type.plural}</h2>
+
+				<ul className="list-unstyled grid">
+					{filteredElements.map((element) => (
+						<li key={element.id}>
+							<MediaElement
+								element={element}
+								handleEditElement={handleEditElement}
+							/>
+						</li>
+					))}
+				</ul>
+			</section>
+		);
+	}
 
 	return (
 		<div className="grid">
-			{movies.length > 0 && (
-				<section className="stack-md">
-					<h2>Películas</h2>
-
-					<ul className="list-unstyled grid">
-						{movies.map((element) => (
-							<li key={element.id}>
-								<MediaElement
-									element={element}
-									handleEditElement={handleEditElement}
-								/>
-							</li>
-						))}
-					</ul>
-				</section>
-			)}
-
-			{videoGames.length > 0 && (
-				<section className="stack-md">
-					<h2>Videojuegos</h2>
-
-					<ul className="list-unstyled grid">
-						{videoGames.map((element) => (
-							<li key={element.id}>
-								<MediaElement
-									element={element}
-									handleEditElement={handleEditElement}
-								/>
-							</li>
-						))}
-					</ul>
-				</section>
-			)}
-
-			{ebooks.length > 0 && (
-				<section className="stack-md">
-					<h2>eBooks</h2>
-
-					<ul className="list-unstyled grid">
-						{ebooks.map((element) => (
-							<li key={element.id}>
-								<MediaElement
-									element={element}
-									handleEditElement={handleEditElement}
-								/>
-							</li>
-						))}
-					</ul>
-				</section>
+			{Object.values(elementTypes).map((type) =>
+				renderElementsByType(elements, type),
 			)}
 		</div>
 	);

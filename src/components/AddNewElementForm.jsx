@@ -30,16 +30,14 @@ export default function AddNewElementForm({ handleAddElement }) {
 						required={true}
 					>
 						<option value="">— Selecciona el tipo —</option>
-						{Object.entries(elementTypes).map(
-							([elementTypeKey, elementTypeValue]) => (
-								<option
-									key={elementTypeKey}
-									value={elementTypeValue}
-								>
-									{elementTypeValue}
-								</option>
-							),
-						)}
+						{Object.values(elementTypes).map((type) => (
+							<option
+								key={type.id}
+								value={type.id}
+							>
+								{type.singular}
+							</option>
+						))}
 					</select>
 				</div>
 
@@ -53,6 +51,7 @@ export default function AddNewElementForm({ handleAddElement }) {
 						value={name}
 						onChange={(event) => setName(event.target.value)}
 						required={true}
+						autoComplete="off"
 					/>
 				</div>
 
