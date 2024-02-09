@@ -17,10 +17,10 @@ function AddNewElementForm({ handleAddElement }) {
 		<>
 			<form
 				onSubmit={handleSubmit}
-				className="stack"
+				className="stack-md"
 			>
 				{/* Type */}
-				<div className="stack">
+				<div className="stack-xs">
 					<label htmlFor="type">Tipo</label>
 					<select
 						id="type"
@@ -44,7 +44,7 @@ function AddNewElementForm({ handleAddElement }) {
 				</div>
 
 				{/* Name */}
-				<div className="stack">
+				<div className="stack-xs">
 					<label htmlFor="name">Nombre</label>
 					<input
 						type="text"

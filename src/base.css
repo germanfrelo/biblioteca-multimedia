@@ -19,6 +19,7 @@ Use border box sizing by default, globally.
 5. Prevent WebKit-based browsers on iOS (all iOS browsers) from automatically increasing the default text size in landscape orientation. Reference:
 - https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/
 - https://css-tricks.com/your-css-reset-needs-text-size-adjust-probably/
+6. Prevent unwanted layout shifts caused by scrollbars when text get longer.
 */
 
 html {
@@ -31,6 +32,7 @@ html {
 	/* stylelint-disable-next-line property-no-vendor-prefix */
 	-webkit-text-size-adjust: none; /* 5 */
 	text-size-adjust: none; /* 5 */
+	scrollbar-gutter: stable; /* 6 */
 }
 
 /*
