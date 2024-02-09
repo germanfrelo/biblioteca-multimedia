@@ -1,5 +1,13 @@
+@layer base;
+
+@import url("../base.css") layer(base);
+
+* {
+	margin: 0;
+}
+
 body {
-	max-inline-size: 100rem;
+	max-inline-size: 110rem;
 	padding: 1rem;
 	margin-inline: auto;
 }
@@ -8,20 +16,118 @@ body {
 	inline-size: 100%;
 }
 
+/* Grid
+   ======================================== */
+
+.grid {
+	/* The minimum value for the `min()` function */
+	--minimum: 25rem;
+
+	display: grid;
+	grid-template-columns: repeat(
+		auto-fit,
+		minmax(min(100%, var(--minimum)), 1fr)
+	);
+	gap: var(--space, 0);
+}
+
+/* List Unstyled
+   ======================================== */
+
 .list-unstyled {
 	padding-inline-start: 0;
 	list-style-type: none;
 }
 
-.grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(min(100%, 25rem), 1fr));
-	gap: 1rem 2rem;
+/* Sidebar
+   ======================================== */
+
+[class*="with-sidebar-"] {
+	/* The width of the sidebar (empty means not set; defaults to the content width) */
+	--sidebar-width: 0;
+
+	/* The narrowest the content (main) element can be before wrapping. Should be a percentage */
+	--not-sidebar-min-width: 66.66%;
+
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space);
 }
 
-.stack {
+[class*="with-sidebar-"] > * {
+	flex-grow: 1;
+}
+
+.with-sidebar-left > :nth-child(2) {
+	flex-basis: var(--sidebar-width, 0);
+	flex-grow: 999;
+	min-inline-size: var(--not-sidebar-min-width, 66.66%);
+}
+
+.with-sidebar-right > :nth-child(1) {
+	flex-basis: var(--sidebar-width, 0);
+	flex-grow: 999;
+	min-inline-size: var(--not-sidebar-min-width, 66.66%);
+}
+
+/* Stack
+   ======================================== */
+
+[class*="stack"] {
 	display: flex;
 	flex-direction: column;
-	gap: 0.25rem;
-	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+[class*="stack"] > * {
+	margin-block: 0;
+}
+
+[class*="stack"] > * + * {
+	margin-block-start: var(--space, 1rem);
+}
+
+.stack-lg > * + * {
+	--space: 2rem;
+}
+
+.stack-md > * + * {
+	--space: 1rem;
+}
+
+.stack-sm > * + * {
+	--space: 0.5rem;
+}
+
+.stack-xs > * + * {
+	--space: 0.25rem;
+}
+
+/* Switcher
+   ======================================== */
+
+.switcher {
+	/* The container width at which the component switches between a horizontal and vertical layout */
+	--threshold: 20rem;
+
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space, 0);
+}
+
+.switcher > * {
+	flex-basis: calc((var(--threshold) - 100%) * 999);
+	flex-grow: 1;
+}
+
+.switcher > :nth-last-child(n + 3),
+.switcher > :nth-last-child(n + 3) ~ * {
+	flex-basis: 100%;
+}
+
+/* Utilities
+   ======================================== */
+
+.text-center {
+	text-align: center;
 }
