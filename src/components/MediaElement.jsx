@@ -25,19 +25,20 @@ export default function MediaElement({ element, handleEditElement }) {
 
 	const editElementForm = (
 		/* Name */
-		<div className="stack-xs">
-			<label htmlFor="name">Nombre</label>
-			<input
-				type="text"
-				id="name"
-				name="name"
-				value={editedElement.name}
-				onChange={handleInputChange}
+		<div className="stack-sm">
+			<div className="stack-xs">
+				<label htmlFor="name">Nombre</label>
+				<input
+					type="text"
+					id="name"
+					name="name"
+					value={editedElement.name}
+					onChange={handleInputChange}
 					required={true}
 					autoComplete="off"
-			/>
+				/>
+			</div>
 			<button onClick={handleSave}>Guardar</button>
-			<button onClick={handleEditToggle}>Cancelar</button>
 		</div>
 	);
 	const elementMarkup = (
@@ -51,7 +52,7 @@ export default function MediaElement({ element, handleEditElement }) {
 	);
 
 	return (
-		<div>
+		<div className="stack-sm">
 			{isEditing ? editElementForm : elementMarkup}
 
 			<button onClick={handleEditToggle}>

@@ -5,24 +5,22 @@ export default function SearchForm({ searchTerm, setSearchTerm }) {
 			onSubmit={(event) => {
 				event.preventDefault();
 			}}
-			className="stack-md"
+			className="wrapper stack-xs text-center"
+			data-layout="center"
 		>
-			<div className="stack-xs">
-				<label
-					htmlFor="search-input"
-					className="stack-xs"
-				>
-					<strong>Buscar</strong>
-					<span>Por nombre o fecha de creación</span>
-				</label>
-				<input
-					type="search"
-					id="search-input"
-					name="q"
-					value={searchTerm}
-					onChange={(event) => setSearchTerm(event.target.value)}
-				/>
-			</div>
+			<label
+				htmlFor="search-input"
+				className="stack-xs"
+			>
+				Filtar (por nombre o fecha de creación)
+			</label>
+			<input
+				type="search"
+				id="search-input"
+				name="q"
+				value={searchTerm}
+				onChange={(event) => setSearchTerm(event.target.value)}
+			/>
 		</form>
 	);
 }

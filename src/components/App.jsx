@@ -43,24 +43,21 @@ export default function App() {
 	const filteredElements = filterElements({ elements, searchTerm });
 
 	return (
-		<div className="stack-lg">
-			<h1 className="text-center">Biblioteca multimedia</h1>
+		<div className="wrapper stack-lg">
+			<header className="text-center">
+				<h1>Biblioteca multimedia</h1>
+			</header>
+
+			<SearchForm
+				searchTerm={searchTerm}
+				setSearchTerm={setSearchTerm}
+			/>
 
 			<div className="with-sidebar-left">
-				<div className="stack-lg">
-					<section className="stack-sm">
-						<h2>Buscar</h2>
-						<SearchForm
-							searchTerm={searchTerm}
-							setSearchTerm={setSearchTerm}
-						/>
-					</section>
-
-					<section className="stack-sm">
-						<h2>Añadir elemento</h2>
-						<AddNewElementForm handleAddElement={handleAddElement} />
-					</section>
-				</div>
+				<section className="stack-sm">
+					<h2>Añadir elemento</h2>
+					<AddNewElementForm handleAddElement={handleAddElement} />
+				</section>
 
 				<main className="stack-lg">
 					{!filteredElements.length > 0 ? (
