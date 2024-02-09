@@ -1,7 +1,7 @@
 import { elementTypes } from "../data";
 import MediaElement from "./MediaElement";
 
-function ElementsList({ elements }) {
+function ElementsList({ elements, handleEditElement }) {
 	const movies = elements.filter(
 		(element) => element.type === elementTypes.movie,
 	);
@@ -19,11 +19,11 @@ function ElementsList({ elements }) {
 					<h2>Películas</h2>
 
 					<ul className="list-unstyled grid">
-						{movies.map(({ id, name, createdDate }) => (
-							<li key={id}>
+						{movies.map((element) => (
+							<li key={element.id}>
 								<MediaElement
-									name={name}
-									createdDate={createdDate}
+									element={element}
+									handleEditElement={handleEditElement}
 								/>
 							</li>
 						))}
@@ -36,11 +36,11 @@ function ElementsList({ elements }) {
 					<h2>Videojuegos</h2>
 
 					<ul className="list-unstyled grid">
-						{videoGames.map(({ id, name, createdDate }) => (
-							<li key={id}>
+						{videoGames.map((element) => (
+							<li key={element.id}>
 								<MediaElement
-									name={name}
-									createdDate={createdDate}
+									element={element}
+									handleEditElement={handleEditElement}
 								/>
 							</li>
 						))}
@@ -53,11 +53,11 @@ function ElementsList({ elements }) {
 					<h2>eBooks</h2>
 
 					<ul className="list-unstyled grid">
-						{ebooks.map(({ id, name, createdDate }) => (
-							<li key={id}>
+						{ebooks.map((element) => (
+							<li key={element.id}>
 								<MediaElement
-									name={name}
-									createdDate={createdDate}
+									element={element}
+									handleEditElement={handleEditElement}
 								/>
 							</li>
 						))}
