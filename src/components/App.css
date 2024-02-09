@@ -1,19 +1,70 @@
+/*
+	STRUCTURE:
+	0. Layers and imports
+	1. Global custom properties
+	2. Global and inherited styles
+	3. Composition / Layout primitives
+	4. Utility classes
+	5. Blocks
+	6. Exceptions
+*/
+
+/* ============ 0. LAYERS AND IMPORTS ============ */
+
 @layer base;
 
 @import url("../base.css") layer(base);
+
+/* ============ 1. GLOBAL CUSTOM PROPERTIES ============ */
+
+/* ============ 2. GLOBAL AND INHERITED STYLES ============ */
 
 * {
 	margin: 0;
 }
 
 body {
-	max-inline-size: 110rem;
 	padding: 1rem;
-	margin-inline: auto;
+}
+
+input {
+	max-inline-size: 40rem;
 }
 
 [type="search"] {
 	inline-size: 100%;
+}
+
+/* ============ 3. COMPOSITION / LAYOUT PRIMITIVES ============ */
+
+/* Cluster
+   ======================================== */
+
+[class*="cluster"] {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space, 0);
+	align-items: flex-start;
+}
+
+[class*="cluster"] > * {
+	margin-block: 0;
+}
+
+.cluster-lg {
+	--space: 2rem;
+}
+
+.cluster-md {
+	--space: 1rem;
+}
+
+.cluster-sm {
+	--space: 0.5rem;
+}
+
+.cluster-xs {
+	--space: 0.5rem;
 }
 
 /* Grid
@@ -76,7 +127,10 @@ body {
 [class*="stack"] {
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-start;
+}
+
+[class*="stack"][data-layout="center"] {
+	align-items: center;
 }
 
 [class*="stack"] > * {
@@ -125,9 +179,36 @@ body {
 	flex-basis: 100%;
 }
 
-/* Utilities
-   ======================================== */
+/* ============ 4. UTILITY CLASSES ============ */
 
 .text-center {
 	text-align: center;
+}
+
+.visually-hidden {
+	position: absolute !important;
+	inline-size: 1px !important;
+	block-size: 1px !important;
+	overflow: hidden !important;
+	clip-path: inset(50%) !important;
+	white-space: nowrap !important;
+}
+
+.wrapper {
+	inline-size: 100%;
+	max-inline-size: 110rem;
+	margin-inline: auto;
+}
+
+/* ============ 5. BLOCKS ============ */
+
+/* Site Header
+   ======================================== */
+
+.site-header {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	align-items: center;
+	justify-content: space-between;
 }
