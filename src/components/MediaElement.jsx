@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./MediaElement.css";
 
-function MediaElement({ element, handleEditElement }) {
+export default function MediaElement({ element, handleEditElement }) {
 	const { name, createdDate } = element;
 	const [isEditing, setIsEditing] = useState(false);
 	const [editedElement, setEditedElement] = useState({ ...element });
@@ -33,6 +33,8 @@ function MediaElement({ element, handleEditElement }) {
 				name="name"
 				value={editedElement.name}
 				onChange={handleInputChange}
+					required={true}
+					autoComplete="off"
 			/>
 			<button onClick={handleSave}>Guardar</button>
 			<button onClick={handleEditToggle}>Cancelar</button>
@@ -58,5 +60,3 @@ function MediaElement({ element, handleEditElement }) {
 		</div>
 	);
 }
-
-export default MediaElement;

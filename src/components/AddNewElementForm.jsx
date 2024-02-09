@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { elementTypes } from "../data";
 
-function AddNewElementForm({ handleAddElement }) {
+export default function AddNewElementForm({ handleAddElement }) {
 	const [type, setType] = useState("");
 	const [name, setName] = useState("");
 
@@ -30,16 +30,14 @@ function AddNewElementForm({ handleAddElement }) {
 						required={true}
 					>
 						<option value="">— Selecciona el tipo —</option>
-						{Object.entries(elementTypes).map(
-							([elementTypeKey, elementTypeValue]) => (
-								<option
-									key={elementTypeKey}
-									value={elementTypeValue}
-								>
-									{elementTypeValue}
-								</option>
-							),
-						)}
+						{Object.values(elementTypes).map((type) => (
+							<option
+								key={type.id}
+								value={type.id}
+							>
+								{type.singular}
+							</option>
+						))}
 					</select>
 				</div>
 
@@ -53,6 +51,7 @@ function AddNewElementForm({ handleAddElement }) {
 						value={name}
 						onChange={(event) => setName(event.target.value)}
 						required={true}
+						autoComplete="off"
 					/>
 				</div>
 
@@ -61,5 +60,3 @@ function AddNewElementForm({ handleAddElement }) {
 		</>
 	);
 }
-
-export default AddNewElementForm;
