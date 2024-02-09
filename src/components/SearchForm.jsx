@@ -1,26 +1,38 @@
-export default function SearchForm({ searchTerm, setSearchTerm }) {
+export default function SearchForm({
+	nameSearch,
+	setNameSearch,
+	createdDateSearch,
+	setCreatedDateSearch,
+}) {
 	return (
 		<form
 			role="search"
 			onSubmit={(event) => {
 				event.preventDefault();
 			}}
-			className="wrapper stack-xs text-center"
-			data-layout="center"
+			className="stack-md"
 		>
-			<label
-				htmlFor="search-input"
-				className="stack-xs"
-			>
-				Filtar (por nombre o fecha de creación)
-			</label>
-			<input
-				type="search"
-				id="search-input"
-				name="q"
-				value={searchTerm}
-				onChange={(event) => setSearchTerm(event.target.value)}
-			/>
+			<div className="stack-xs">
+				<label htmlFor="search-name">Nombre</label>
+				<input
+					type="search"
+					id="search-name"
+					name="name"
+					value={nameSearch}
+					onChange={(event) => setNameSearch(event.target.value)}
+				/>
+			</div>
+
+			<div className="stack-xs">
+				<label htmlFor="search-created-date">Fecha de creación</label>
+				<input
+					type="date"
+					id="search-created-date"
+					name="created-date"
+					value={createdDateSearch}
+					onChange={(event) => setCreatedDateSearch(event.target.value)}
+				/>
+			</div>
 		</form>
 	);
 }
