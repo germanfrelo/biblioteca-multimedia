@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./MediaElement.css";
+import "./Element.css";
 
 export default function MediaElement({ element, handleEditElement }) {
 	const { name, createdDate } = element;
@@ -44,12 +44,16 @@ export default function MediaElement({ element, handleEditElement }) {
 		</div>
 	);
 	const elementMarkup = (
-		<dl className="media-element">
-			<dt>Nombre:</dt>
-			<dd>{name}</dd>
+		<dl className="stack-sm element">
+			<div>
+				<dt className="visually-hidden">Nombre:</dt>
+				<dd className="element-name">{name}</dd>
+			</div>
 
-			<dt>Fecha creación:</dt>
-			<dd>{new Date(createdDate).toLocaleDateString()}</dd>
+			<div className="cluster">
+				<dt>Fecha creación:</dt>
+				<dd>{new Date(createdDate).toLocaleDateString()}</dd>
+			</div>
 		</dl>
 	);
 
