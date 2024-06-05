@@ -75,10 +75,7 @@ input {
 	--minimum: 25rem;
 
 	display: grid;
-	grid-template-columns: repeat(
-		auto-fit,
-		minmax(min(100%, var(--minimum)), 1fr)
-	);
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--minimum)), 1fr));
 	gap: var(--space, 0);
 }
 
