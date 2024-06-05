@@ -1,4 +1,15 @@
 {
-	"singleAttributePerLine": true,
-	"useTabs": true
+	"useTabs": true,
+	"overrides": [
+		{
+			"files": ["*.html", "*.css"],
+			"options": {
+				"printWidth": 9999
+			}
+		},
+		{
+			"files": ["*.js", "*.jsx", "*.vue"],
+			"options": { "singleAttributePerLine": true }
+		}
+	]
 }
