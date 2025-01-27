@@ -73,9 +73,8 @@ input {
 .grid {
 	/* The minimum value for the `min()` function */
 	--minimum: 25rem;
-
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--minimum)), 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--minimum, 25rem)), 1fr));
 	gap: var(--space, 0);
 }
 
@@ -96,10 +95,9 @@ input {
 
 	/* The narrowest the content (main) element can be before wrapping. Should be a percentage */
 	--not-sidebar-min-width: 66.66%;
-
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--space);
+	gap: var(--space, 0);
 }
 
 [class*="with-sidebar-"] > * {
@@ -107,14 +105,14 @@ input {
 }
 
 .with-sidebar-left > :nth-child(2) {
-	flex-basis: var(--sidebar-width, 0);
 	flex-grow: 999;
+	flex-basis: var(--sidebar-width, 0);
 	min-inline-size: var(--not-sidebar-min-width, 66.66%);
 }
 
 .with-sidebar-right > :nth-child(1) {
-	flex-basis: var(--sidebar-width, 0);
 	flex-grow: 999;
+	flex-basis: var(--sidebar-width, 0);
 	min-inline-size: var(--not-sidebar-min-width, 66.66%);
 }
 
@@ -160,15 +158,14 @@ input {
 .switcher {
 	/* The container width at which the component switches between a horizontal and vertical layout */
 	--threshold: 20rem;
-
 	display: flex;
 	flex-wrap: wrap;
 	gap: var(--space, 0);
 }
 
 .switcher > * {
-	flex-basis: calc((var(--threshold) - 100%) * 999);
 	flex-grow: 1;
+	flex-basis: calc((var(--threshold, 20rem) - 100%) * 999);
 }
 
 .switcher > :nth-last-child(n + 3),
@@ -187,8 +184,8 @@ input {
 	inline-size: 1px !important;
 	block-size: 1px !important;
 	overflow: hidden !important;
-	clip-path: inset(50%) !important;
 	white-space: nowrap !important;
+	clip-path: inset(50%) !important;
 }
 
 .wrapper {
