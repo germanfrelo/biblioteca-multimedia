@@ -44,7 +44,7 @@ export default {
 		"plugin/use-defensive-css": [
 			true,
 			{
-				severity: "warning",
+				"severity": "warning",
 				"accidental-hover": false, // Enable as needed
 				"background-repeat": false, // The imported CSS reset already apply 'no-repeat' to all elements
 				"custom-property-fallbacks": true,
