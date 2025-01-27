@@ -1,5 +1,10 @@
+import PropTypes from "prop-types";
 import { useState } from "react";
 import { elementTypes } from "../data";
+
+AddNewElementForm.propTypes = {
+	handleAddElement: PropTypes.func.isRequired,
+};
 
 export default function AddNewElementForm({ handleAddElement }) {
 	const [type, setType] = useState("");

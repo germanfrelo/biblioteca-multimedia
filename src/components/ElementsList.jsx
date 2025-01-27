@@ -1,5 +1,18 @@
+import PropTypes from "prop-types";
 import { elementTypes } from "../data";
 import MediaElement from "./MediaElement";
+
+ElementsList.propTypes = {
+	elements: PropTypes.arrayOf(
+		PropTypes.shape({
+			id: PropTypes.string.isRequired,
+			name: PropTypes.string.isRequired,
+			type: PropTypes.string.isRequired,
+			createdDate: PropTypes.instanceOf(Date).isRequired,
+		}),
+	).isRequired,
+	handleEditElement: PropTypes.func.isRequired,
+};
 
 export default function ElementsList({ elements, handleEditElement }) {
 	function renderElementsByType(elements, type) {
