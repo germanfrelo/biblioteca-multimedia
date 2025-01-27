@@ -105,14 +105,14 @@ input {
 }
 
 .with-sidebar-left > :nth-child(2) {
-	flex-basis: var(--sidebar-width, 0);
 	flex-grow: 999;
+	flex-basis: var(--sidebar-width, 0);
 	min-inline-size: var(--not-sidebar-min-width, 66.66%);
 }
 
 .with-sidebar-right > :nth-child(1) {
-	flex-basis: var(--sidebar-width, 0);
 	flex-grow: 999;
+	flex-basis: var(--sidebar-width, 0);
 	min-inline-size: var(--not-sidebar-min-width, 66.66%);
 }
 
@@ -164,8 +164,8 @@ input {
 }
 
 .switcher > * {
-	flex-basis: calc((var(--threshold, 20rem) - 100%) * 999);
 	flex-grow: 1;
+	flex-basis: calc((var(--threshold, 20rem) - 100%) * 999);
 }
 
 .switcher > :nth-last-child(n + 3),
@@ -184,8 +184,8 @@ input {
 	inline-size: 1px !important;
 	block-size: 1px !important;
 	overflow: hidden !important;
-	clip-path: inset(50%) !important;
 	white-space: nowrap !important;
+	clip-path: inset(50%) !important;
 }
 
 .wrapper {
