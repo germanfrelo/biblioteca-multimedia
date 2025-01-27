@@ -1,3 +1,12 @@
+import PropTypes from "prop-types";
+
+SearchForm.propTypes = {
+	nameSearch: PropTypes.string.isRequired,
+	setNameSearch: PropTypes.func.isRequired,
+	createdDateSearch: PropTypes.string.isRequired,
+	setCreatedDateSearch: PropTypes.func.isRequired,
+};
+
 export default function SearchForm({
 	nameSearch,
 	setNameSearch,

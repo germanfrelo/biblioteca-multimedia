@@ -1,5 +1,14 @@
+import PropTypes from "prop-types";
 import { useState } from "react";
 import "./MediaElement.css";
+
+MediaElement.propTypes = {
+	element: PropTypes.shape({
+		name: PropTypes.string.isRequired,
+		createdDate: PropTypes.string.isRequired,
+	}).isRequired,
+	handleEditElement: PropTypes.func.isRequired,
+};
 
 export default function MediaElement({ element, handleEditElement }) {
 	const { name, createdDate } = element;
