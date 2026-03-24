@@ -25,3 +25,9 @@ updates:
       semver-patch-days: 3
       semver-minor-days: 7
       semver-major-days: 14
+    # Group React core dependencies.
+    groups:
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
