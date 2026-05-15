@@ -11,7 +11,7 @@
 		"url": "https://github.com/germanfrelo/biblioteca-multimedia.git"
 	},
 	"license": "MIT",
-	"author": "Germán Freixinós López",
+	"author": "Germán Freixinós",
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
